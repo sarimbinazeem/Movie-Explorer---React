@@ -25,7 +25,7 @@ const MovieCard = ({ id, title, poster, rating, releaseDate }) => {
 
       <p>{year}</p>
 
-      <button onClick={handleFavorite}>
+      <button onClick={handleFavourite}>
         {favorite
           ? "❤️ Remove Favorite"
           : "🤍 Add Favorite"}

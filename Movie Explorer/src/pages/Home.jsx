@@ -24,14 +24,17 @@ const Home = () => {
 
           //Set the fetched data
           setTrending(trendingData)
-          setPopular(popularData)
+          setPopular(popularData.results)
           setTopRated(topData)
           setUpcoming(upcomingData)
         }
-        catch (err) 
-        {
+        catch (err) {
+          console.log(err);
+          console.log(err.message);
+          console.log(err.stack);
+
           setError("Failed to load movies.");
-         } 
+        }
          finally {
          setLoading(false);
         }

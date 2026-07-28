@@ -1,4 +1,4 @@
-import axiosInstance from "./axiosInstance";
+import axiosInstance from './axios'
 
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 

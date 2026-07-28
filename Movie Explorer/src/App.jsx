@@ -5,9 +5,9 @@ import MainLayout from "./layouts/MainLayout";
 
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
-import MovieDetails from "./pages/MovieDetails";
+import MovieDetails from "./pages/MovieDetail";
 import Search from "./pages/Search";
-import Favorites from "./pages/Favorites";
+import Favorites from "./pages/Favourites";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";

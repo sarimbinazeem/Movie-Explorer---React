@@ -1,10 +1,10 @@
 import React from "react";
 
-const Error = ({ message }) => {
+const Error = ({ error }) => {
   return (
     <div>
       <h2>Error</h2>
-      <p>{message}</p>
+      <p>{error}</p>
     </div>
   );
 };

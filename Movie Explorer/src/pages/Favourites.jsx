@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import { getFavourites , setFavourites} from "../services/favourites";
+import { getFavourites , saveFavourites} from "../services/favourites";
 
 const Favorites = () => {
   const [favourites, setFavourites] = useState([])
 
   useEffect(() => {
-    setFavourites(getFavourites())
+    saveFavourites(getFavourites())
   
   },[])
 
