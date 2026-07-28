@@ -71,3 +71,9 @@ export const getSimilarMovies = async (id) =>{
 
   return response.data.results
 }
+
+export const getMovieVideos = async (id) => {
+  const response = await axiosInstance.get(`/movie/${id}/videos`, options);
+
+  return response.data.results;
+};

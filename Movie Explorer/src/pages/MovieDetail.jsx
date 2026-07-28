@@ -7,6 +7,7 @@ const MovieDetails = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [similarMovies, setSimilarMovies] = useState([]);
+  const [videos, setVideos] = useState([]);
 
   const { id } = useParams();
 
@@ -16,6 +17,9 @@ const MovieDetails = () => {
         const data = await getMovieDetails(id)
                 
         const similar = await getSimilarMovies(id);
+        const trailer = await getMovieVideos(id);
+
+        setVideos(trailer);
 
         setSimilarMovies(similar);
         setMovie(data)
@@ -43,6 +47,20 @@ const MovieDetails = () => {
         <p>Release Date: {movie.release_date}</p>
         <p>Runtime: {movie.runtime} minutes</p>
 
+      </div>
+
+      <div>
+        {
+          videos.length > 0 && (
+          <iframe
+          title="Trailer"
+          width="560"
+          height="315"
+          src={`https://www.youtube.com/embed/${videos[0].key}`}
+          allowFullScreen
+          />
+          )
+        }
       </div>
 
       <div>
