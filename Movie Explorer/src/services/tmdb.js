@@ -65,3 +65,9 @@ export const getGenres = async () => {
   const response = await axiosInstance.get("/genre/movie/list", options);
   return response.data.genres;
 };
+
+export const getSimilarMovies = async (id) =>{
+  const response = await axiosInstance.get(`/movie/${id}/similar`,options)
+
+  return response.data.results
+}
