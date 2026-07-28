@@ -14,6 +14,9 @@ const Movies = () => {
   const [page,setPage] = useState("")
   const [total, setTotal] = useState("")
 
+  const [genres,setGenres] = useState([])
+  const [selectedGenre,setSelectedGenre] = useState("")
+
   useEffect(()=>{
     const fetch = async () => {
       try{
@@ -35,6 +38,27 @@ const Movies = () => {
     fetch()
   },[page])
 
+  useEffect(() => {
+    const fetchGenres = async () => {
+      const data = await getGenres();
+      setGenres(data);
+    };
+
+    fetchGenres();
+  }, []);
+
+  useEffect(() => {
+    if (!selectedGenre) return;
+
+    const fetchMovies = async () => {
+      const data = await getMoviesByGenre(selectedGenre);
+
+      setMovies(data);
+    };
+
+    fetchMovies();
+  }, [selectedGenre]);
+
   if(loading) return <Loading/>
   if (error) return <ErrorMessage error={error} />;
 
@@ -49,6 +73,8 @@ const Movies = () => {
 
       <MovieGrid movies={movies} />
       <PageNavigation page = {page} total = {total} onPrevious={() => setPage(page-1)} onNext={() => setPage(page+1)} />
+
+      <GenreFilter  genres={genres} selectedGenre={selectedGenre} setSelectedGenre={setSelectedGenre}/>
     </main>
   );
 };
