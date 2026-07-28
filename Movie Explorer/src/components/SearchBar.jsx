@@ -4,7 +4,7 @@ const SearchBar = ({item,setItem,onSearch}) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         if(item.trim()){
-            onSearch()
+            onSearch(item)
         }
     }
   return (
