@@ -1,1 +1,32 @@
 @import "tailwindcss";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+body{
+    background-color: #141414;
+    color: #FFFFFF;
+    font-family: Inter, system-ui, sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: inherit; /*matches the color */
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+button{
+    cursor: pointer;
+}
