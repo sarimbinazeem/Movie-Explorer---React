@@ -13,9 +13,15 @@ export const getTrendingMovies = async () => {
   return response.data.results;
 };
 
-export const getPopularMovies = async () => {
-  const response = await axiosInstance.get("/movie/popular", options);
-  return response.data.results;
+export const getPopularMovies = async (page = 1) => {
+  const response = await axiosInstance.get("/movie/popular", {
+    params: {
+      api_key: API_KEY,
+      page,
+    },
+  });
+
+  return response.data;
 };
 
 export const getTopRatedMovies = async () => {
