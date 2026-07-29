@@ -49,10 +49,10 @@ const Home = () => {
   
 
   return (
-    <main>
-      <section>
-        <h1>Movie Explorer</h1>
-        <p>Explore your favourite movies</p>
+    <main className='text-gray-300' >
+      <section className='text-center w-full min-h-[50vh] flex  flex-col justify-center items-center leading-15'>
+        <h1 className='text-[#B20710] text-6xl font-bold '>Movie Explorer</h1>
+        <p >Explore your favourite movies</p>
 
       </section>
       <section>
