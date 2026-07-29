@@ -3,7 +3,7 @@ import React from 'react'
 const PageNavigation = ({page, total, onPrevious, onNext}) => {
   return (
     <div>
-        <button onClick={onPrevious} disabled={page===1}>
+        <button onClick={onPrevious} disabled={page<=1}>
             Previous
 
         </button>
@@ -12,7 +12,7 @@ const PageNavigation = ({page, total, onPrevious, onNext}) => {
             Page {page} of {total}
         </p>
 
-        <button onClick={onNext} disabled={page===total}>
+        <button onClick={onNext} disabled={page >= total}>
             Next
         </button>
     </div>

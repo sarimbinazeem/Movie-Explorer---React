@@ -9,10 +9,13 @@ const GenreFilter = ({generes,genreItem,setGenreItem}) => {
             <option value=''>All Genres</option>
 
             {
-                genreItem.map((genre)=>{
+                generes.map((genre)=>{
+                    return (
                     <option key={genre.id} value={genre.id}>
                         {genre.name}
                     </option>
+
+                    )
                  })
             }
         </select>
