@@ -16,11 +16,11 @@ const MovieCard = ({ id, title, poster, rating, releaseDate }) => {
     setFavourite(status)
   }
   return (
-    <div className='bg-[#1c1c1c] rounded-2xl shadow-lg shadow-gray-900 hover:-translate-y-1 p-4 overflow-hidden ease-in duration-300 text-center leading-10 w-full '>
-      <NavLink to={`/movie/${id}`} >
-        <img src={poster} alt={`${title} Poster`}  className="w-full h-80 object-cover "/>
+    <div className='flex flex-col bg-[#1c1c1c] rounded-2xl shadow-lg shadow-gray-900 hover:-translate-y-1  overflow-hidden ease-in duration-300 text-center leading-10 w-full '>
+      <NavLink to={`/movie/${id}`} className='flex-1'>
+        <img src={poster} alt={`${title} Poster`}  className="w-full h-80 object-cover  "/>
 
-        <h2 className="text-xl font-bold line-clamp-2 ">{title}</h2>
+        <h2 className="text-2xl font-bold line-clamp-2 mt-5">{title}</h2>
 
         <p>⭐ {rating ? rating.toFixed(1) : "N/A"}</p>
 
