@@ -50,15 +50,16 @@ export const searchMovies = async (query) => {
   return response.data.results;
 };
 
-export const getMoviesByGenre = async (genreId) => {
+export const getMoviesByGenre = async (genreId,page=1) => {
   const response = await axiosInstance.get("/discover/movie", {
     params: {
       api_key: API_KEY,
       with_genres: genreId,
+      page,
     },
   });
 
-  return response.data.results;
+  return response.data;
 };
 
 export const getGenres = async () => {

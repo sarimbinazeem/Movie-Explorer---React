@@ -1,6 +1,7 @@
 import React from 'react'
 
 const GenreFilter = ({generes,genreItem,setGenreItem}) => {
+
   return (
     <div>
         <label>Genre: </label>
@@ -19,6 +20,8 @@ const GenreFilter = ({generes,genreItem,setGenreItem}) => {
                  })
             }
         </select>
+
+        
     </div>
   )
 }
